@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Netflix - Profile</title>
+
+    <link
+        rel="stylesheet"
+        href="../CSS/mainprofile.css">
+
+</head>
+
+<body>
+
+    <!-- =================================
+         HEADER
+    ================================== -->
+
+    <header class="profile-header">
+
+        <div class="netflix-logo">
+
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+                alt="Netflix">
+
+        </div>
+
+        <button
+            class="back-home-btn"
+            onclick="goBack()">
+
+            ← Back
+
+        </button>
+
+    </header>
+
+
+    <!-- =================================
+         PROFILE PAGE
+    ================================== -->
+
+    <main class="account-page">
+
+        <h1>Profile & Account</h1>
+
+
+        <!-- =================================
+             PROFILE CARD
+        ================================== -->
+
+        <section class="profile-card">
+
+            <!-- PROFILE IMAGE -->
+
+            <img
+                src=""
+                alt="Profile"
+                class="current-profile-image"
+                id="currentProfileImage">
+
+
+            <!-- PROFILE NAME -->
+
+            <div class="profile-name-section">
+
+                <h2 id="profileName">
+                    Profile Name
+                </h2>
+
+                <p class="profile-type">
+                    Netflix Profile
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             ACCOUNT DETAILS
+        ================================== -->
+
+        <section class="details-section">
+
+            <h2>Account Details</h2>
+
+            <div class="details-grid">
+
+
+                <!-- PROFILE NAME -->
+
+                <div class="detail-box">
+
+                    <span class="detail-label">
+                        Profile Name
+                    </span>
+
+                    <span
+                        id="detailProfileName"
+                        class="detail-value">
+
+                        -
+
+                    </span>
+
+                </div>
+
+
+                <!-- PROFILE ID -->
+
+                <div class="detail-box">
+
+                    <span class="detail-label">
+                        Profile ID
+                    </span>
+
+                    <span
+                        id="profileId"
+                        class="detail-value">
+
+                        -
+
+                    </span>
+
+                </div>
+
+
+                <!-- DATE JOINED -->
+
+                <div class="detail-box">
+
+                    <span class="detail-label">
+                        Date Joined
+                    </span>
+
+                    <span
+                        id="joinDate"
+                        class="detail-value">
+
+                        -
+
+                    </span>
+
+                </div>
+
+
+                <!-- TIME JOINED -->
+
+                <div class="detail-box">
+
+                    <span class="detail-label">
+                        Time Joined
+                    </span>
+
+                    <span
+                        id="joinTime"
+                        class="detail-value">
+
+                        -
+
+                    </span>
+
+                </div>
+
+
+                <!-- SUBSCRIPTION -->
+
+                <div class="detail-box">
+
+                    <span class="detail-label">
+                        Subscription Plan
+                    </span>
+
+                    <span
+                        id="subscriptionPlan"
+                        class="detail-value subscription">
+
+                        -
+
+                    </span>
+
+                </div>
+
+
+                <!-- SUBSCRIPTION START -->
+
+                <div class="detail-box">
+
+                    <span class="detail-label">
+                        Subscription Started
+                    </span>
+
+                    <span
+                        id="subscriptionStart"
+                        class="detail-value">
+
+                        -
+
+                    </span>
+
+                </div>
+
+
+                <!-- NEXT BILLING -->
+
+                <div class="detail-box">
+
+                    <span class="detail-label">
+                        Next Billing Date
+                    </span>
+
+                    <span
+                        id="nextBilling"
+                        class="detail-value">
+
+                        -
+
+                    </span>
+
+                </div>
+
+
+                <!-- STATUS -->
+
+                <div class="detail-box">
+
+                    <span class="detail-label">
+                        Account Status
+                    </span>
+
+                    <span
+                        id="accountStatus"
+                        class="detail-value active">
+
+                        Active
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             PROFILE SUMMARY
+        ================================== -->
+
+        <section class="summary-section">
+
+            <h2>Profile Summary</h2>
+
+            <div class="summary-grid">
+
+
+                <div class="summary-card">
+
+                    <span
+                        id="profileStatus"
+                        class="summary-number">
+
+                        Active
+
+                    </span>
+
+                    <span class="summary-label">
+                        Profile Status
+                    </span>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <span
+                        id="memberSince"
+                        class="summary-number">
+
+                        -
+
+                    </span>
+
+                    <span class="summary-label">
+                        Member Since
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             ACTIONS
+        ================================== -->
+
+        <div class="action-buttons">
+
+            <button
+                class="edit-btn"
+                onclick="editProfile()">
+
+                Edit Profile
+
+            </button>
+
+
+            <button
+                class="back-btn"
+                onclick="goBack()">
+
+                Back to Profiles
+
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- =================================
+         JAVASCRIPT
+    ================================== -->
+
+    <script src="../Javascript/mainprofile.js"></script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,521 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+
+    min-height: 100vh;
+
+    background: #000;
+
+    color: white;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.profile-header {
+
+    padding: 25px 50px;
+
+}
+
+/* =========================================
+   MAIN
+========================================= */
+
+.profile-settings-page {
+
+    min-height: calc(100vh - 100px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    padding-top: 60px;
+
+}
+
+
+.profile-settings-page h1 {
+
+    font-size: 40px;
+
+    font-weight: 500;
+
+    margin-bottom: 10px;
+
+}
+
+
+.subtitle {
+
+    color: #999;
+
+    margin-bottom: 40px;
+
+}
+
+
+
+/* =========================================
+   PROFILE LIST
+========================================= */
+
+.settings-profiles {
+
+    width: 600px;
+
+    max-width: 90%;
+
+}
+
+
+
+/* =========================================
+   PROFILE ROW
+========================================= */
+
+.profile-setting-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 15px;
+
+    margin-bottom: 12px;
+
+    background: #181818;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.profile-setting-row:hover {
+
+    background: #292929;
+
+}
+
+
+
+/* =========================================
+   LEFT SIDE
+========================================= */
+
+.profile-left {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+}
+
+
+.profile-small-image {
+
+    width: 65px;
+
+    height: 65px;
+
+    object-fit: cover;
+
+    border-radius: 5px;
+
+}
+
+
+.profile-left span {
+
+    font-size: 19px;
+
+}
+
+
+
+/* =========================================
+   RIGHT SIDE
+========================================= */
+
+.profile-right {
+
+    color: #999;
+
+    font-size: 30px;
+
+}
+
+
+.profile-arrow {
+
+    transition: 0.2s;
+
+}
+
+
+.profile-setting-row:hover
+.profile-arrow {
+
+    color: white;
+
+}
+
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.back-btn {
+
+    margin-top: 35px;
+
+    padding: 12px 35px;
+
+    background: transparent;
+
+    border: 1px solid #777;
+
+    color: #aaa;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+}
+
+
+.back-btn:hover {
+
+    color: white;
+
+    border-color: white;
+
+}
+
+
+
+/* =========================================
+   EDIT MODAL
+========================================= */
+
+.settings-modal {
+
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.85);
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 9999;
+
+}
+
+
+
+/* =========================================
+   SETTINGS BOX
+========================================= */
+
+.settings-box {
+
+    position: relative;
+
+    width: 420px;
+
+    background: #181818;
+
+    padding: 35px;
+
+    border-radius: 8px;
+
+    text-align: center;
+
+}
+
+
+.settings-box h2 {
+
+    font-size: 28px;
+
+    margin-bottom: 25px;
+
+}
+
+
+
+/* =========================================
+   CLOSE
+========================================= */
+
+.close-settings {
+
+    position: absolute;
+
+    top: 10px;
+
+    right: 15px;
+
+    background: none;
+
+    border: none;
+
+    color: white;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+}
+
+
+.close-settings:hover {
+
+    color: #e50914;
+
+}
+
+
+
+/* =========================================
+   PROFILE IMAGE
+========================================= */
+
+.settings-image {
+
+    width: 120px;
+
+    height: 120px;
+
+    object-fit: cover;
+
+    border-radius: 5px;
+
+    border: 3px solid #e50914;
+
+    margin-bottom: 15px;
+
+}
+
+
+.settings-box h3 {
+
+    margin-bottom: 25px;
+
+    font-size: 20px;
+
+}
+
+
+
+/* =========================================
+   LABELS
+========================================= */
+
+.settings-box label {
+
+    display: block;
+
+    text-align: left;
+
+    color: #aaa;
+
+    margin-top: 15px;
+
+    margin-bottom: 7px;
+
+}
+
+
+
+/* =========================================
+   INPUT
+========================================= */
+
+#updateProfileName {
+
+    width: 100%;
+
+    padding: 12px;
+
+    background: #222;
+
+    border: 1px solid #555;
+
+    color: white;
+
+    border-radius: 5px;
+
+    font-size: 16px;
+
+    outline: none;
+
+}
+
+
+#updateProfileName:focus {
+
+    border-color: #e50914;
+
+}
+
+
+#updateProfileImage {
+
+    width: 100%;
+
+    color: #aaa;
+
+}
+
+
+
+/* =========================================
+   SAVE BUTTON
+========================================= */
+
+.save-btn {
+
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 12px;
+
+    background: #e50914;
+
+    border: none;
+
+    border-radius: 5px;
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+}
+
+
+.save-btn:hover {
+
+    background: #f40612;
+
+}
+
+
+
+/* =========================================
+   DELETE BUTTON
+========================================= */
+
+.delete-btn {
+
+    width: 100%;
+
+    margin-top: 12px;
+
+    padding: 12px;
+
+    background: transparent;
+
+    border: 1px solid #e50914;
+
+    border-radius: 5px;
+
+    color: #e50914;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+}
+
+
+.delete-btn:hover {
+
+    background: #e50914;
+
+    color: white;
+
+}
+
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .profile-settings-page h1 {
+
+        font-size: 30px;
+
+    }
+
+
+    .settings-box {
+
+        width: 90%;
+
+    }
+
+
+    .profile-setting-row {
+
+        padding: 10px;
+
+    }
+
+
+    .profile-small-image {
+
+        width: 55px;
+
+        height: 55px;
+
+    }
+
+}

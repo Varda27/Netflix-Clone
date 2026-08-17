@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Netflix Login</title>
+
+    <link
+        rel="stylesheet"
+        href="../CSS/login.css">
+
+    <!-- Google Font -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================
+         NAVBAR
+    ================================== -->
+
+    <header>
+
+        <img
+            src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+            class="logo"
+            alt="Netflix">
+
+    </header>
+
+
+
+    <!-- =================================
+         BACKGROUND
+    ================================== -->
+
+    <div class="background">
+
+        <div class="overlay">
+
+
+            <!-- =================================
+                 LOGIN BOX
+            ================================== -->
+
+            <div class="login-box">
+
+
+                <h1>Log In</h1>
+
+
+
+                <!-- =================================
+                     LOGIN FORM
+                ================================== -->
+
+                <form id="loginForm">
+
+
+                    <!-- EMAIL -->
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Email or mobile number"
+                        required>
+
+
+
+                    <!-- PASSWORD -->
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Password"
+                        required>
+
+
+
+                    <!-- LOGIN BUTTON -->
+
+                    <button
+                        type="submit"
+                        id="loginButton">
+
+                        Log In
+
+                    </button>
+
+
+
+                    <!-- FORGOT PASSWORD -->
+
+                    <a
+                        href="#"
+                        class="forgot">
+
+                        Forgot password?
+
+                    </a>
+
+
+
+                    <!-- REMEMBER ME -->
+
+                    <div class="remember">
+
+                        <input
+                            type="checkbox"
+                            id="rememberMe">
+
+                        <label
+                            for="rememberMe">
+
+                            Remember Me
+
+                        </label>
+
+                    </div>
+
+
+
+                    <!-- SIGN UP -->
+
+                    <p class="signup">
+
+                        New to Netflix?
+
+                        <a href="signup.html">
+                            Sign up now.
+                        </a>
+
+                    </p>
+
+
+
+                    <!-- ERROR MESSAGE -->
+
+                    <p
+                        id="loginMessage"
+                        class="login-message">
+                    </p>
+
+
+
+                    <!-- RECAPTCHA -->
+
+                    <small>
+
+                        This page is protected by
+                        Google reCAPTCHA to ensure
+                        you're not a bot.
+
+                    </small>
+
+
+                </form>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================
+         JAVASCRIPT
+    ================================== -->
+
+    <script
+        src="../Javascript/login.js">
+    </script>
+
+
+</body>
+
+</html>

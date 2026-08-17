@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Netflix - Manage Profiles</title>
+
+    <link
+        rel="stylesheet"
+        href="../CSS/profile.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================
+         HEADER
+    ================================== -->
+
+    <header class="profile-header">
+
+        <div class="netflix-logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg">
+        </div>
+
+    </header>
+
+
+
+    <!-- =================================
+         PROFILE SETTINGS
+    ================================== -->
+
+    <main class="profile-settings-page">
+
+
+        <h1>Manage Profiles</h1>
+
+
+        <p class="subtitle">
+            Select a profile to edit
+        </p>
+
+
+
+        <!-- =================================
+             PROFILE LIST
+        ================================== -->
+
+        <div
+            class="settings-profiles"
+            id="profileSettings">
+
+            <!-- JavaScript adds profiles here -->
+
+        </div>
+
+
+
+        <!-- =================================
+             BACK BUTTON
+        ================================== -->
+
+        <button
+            class="back-btn"
+            onclick="goBack()">
+
+            Done
+
+        </button>
+
+
+    </main>
+
+
+
+    <!-- =================================
+         EDIT PROFILE POPUP
+    ================================== -->
+
+    <div
+        id="settingsModal"
+        class="settings-modal">
+
+
+        <div class="settings-box">
+
+
+            <!-- CLOSE -->
+
+            <button
+                class="close-settings"
+                onclick="closeSettings()">
+
+                &times;
+
+            </button>
+
+
+
+            <h2>Edit Profile</h2>
+
+
+
+            <!-- PROFILE IMAGE -->
+
+            <img
+                id="settingsImage"
+                class="settings-image"
+                src=""
+                alt="Profile">
+
+
+
+            <!-- PROFILE NAME -->
+
+            <h3 id="settingsName">
+                Profile
+            </h3>
+
+
+
+            <!-- NAME -->
+
+            <label>
+                Profile Name
+            </label>
+
+            <input
+                type="text"
+                id="updateProfileName"
+                placeholder="Enter profile name">
+
+
+
+            <!-- IMAGE -->
+
+            <label>
+                Change Profile Picture
+            </label>
+
+            <input
+                type="file"
+                id="updateProfileImage"
+                accept="image/*">
+
+
+
+            <!-- BUTTONS -->
+
+            <button
+                class="save-btn"
+                onclick="updateProfile()">
+
+                Save Changes
+
+            </button>
+
+
+            <button
+                id="deleteButton"
+                class="delete-btn"
+                onclick="deleteProfile()">
+
+                Delete Profile
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+
+    <script
+        src="../Javascript/profile.js">
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Netflix - Who's Watching?</title>
+
+    <link
+        rel="stylesheet"
+        href="../CSS/main.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================
+         HEADER
+    ================================== -->
+
+    <header class="header">
+
+        <div class="netflix-logo">
+           <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+             alt="Netflix Logo">
+        </div>
+
+    </header>
+
+
+
+    <!-- =================================
+         WHO'S WATCHING
+    ================================== -->
+
+    <main class="watching-page">
+
+        <h1>Who's watching?</h1>
+
+
+         <!-- PROFILES WILL BE CREATED BY JAVASCRIPT -->
+
+    <div
+        class="profiles-container"
+        id="profilesContainer">
+    </div>
+
+
+        <!-- =================================
+             MANAGE PROFILES
+        ================================== -->
+
+        <button
+            class="manage-btn"
+            onclick="openProfileSettings()">
+
+            Manage Profiles
+
+        </button>
+
+
+    </main>
+
+
+
+    <!-- =================================
+         ADD PROFILE POPUP
+    ================================== -->
+
+    <div
+        id="addProfileModal"
+        class="add-profile-modal">
+
+
+        <div class="add-profile-box">
+
+
+            <!-- CLOSE BUTTON -->
+
+            <button
+                class="close-modal"
+                id="closeAddProfile">
+
+                &times;
+
+            </button>
+
+
+
+            <h2>Add Profile</h2>
+
+
+            <p class="modal-text">
+                Create a new profile
+            </p>
+
+
+
+            <!-- =================================
+                 IMAGE PREVIEW
+            ================================== -->
+
+            <div class="image-preview-container">
+
+                <img
+                    id="profilePreview"
+                    class="profile-preview"
+                    src=""
+                    alt="Profile Preview">
+
+            </div>
+
+
+
+            <!-- =================================
+                 CHOOSE IMAGE
+            ================================== -->
+
+            <label
+                for="newProfileImage"
+                class="choose-image-btn">
+
+                Choose Profile Image
+
+            </label>
+
+
+            <input
+                type="file"
+                id="newProfileImage"
+                accept="image/*">
+
+
+
+            <!-- =================================
+                 PROFILE NAME
+            ================================== -->
+
+            <input
+                type="text"
+                id="newProfileName"
+                placeholder="Enter profile name"
+                maxlength="20">
+
+
+
+            <!-- =================================
+                 BUTTONS
+            ================================== -->
+
+            <div class="modal-buttons">
+
+
+                <button
+                    class="cancel-btn"
+                    id="cancelAddProfile">
+
+                    Cancel
+
+                </button>
+
+
+
+                <button
+                    class="create-btn"
+                    id="createProfileButton">
+
+                    Create Profile
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================
+         JAVASCRIPT
+    ================================== -->
+
+    <script
+        src="../Javascript/main.js">
+    </script>
+
+
+</body>
+
+</html>

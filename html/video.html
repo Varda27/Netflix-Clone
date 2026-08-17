@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Trailer Video Banner</title>
+  <!-- Google Fonts for Cinematic Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==============================================
+       CINEMATIC YOUTUBE TRAILER HERO BANNER
+       ============================================== -->
+  <section class="trailer-banner">
+    
+    <!-- 1. Background Video Layer (16:9 Full Bleed Autoplay Loop) -->
+    <div class="video-background-container">
+      <div class="video-scaler">
+        <!-- 
+          HOW TO REPLACE WITH YOUR YOUTUBE VIDEO:
+          Replace 'd9MyW72ELq0' in BOTH:
+          1. embed/YOUR_VIDEO_ID
+          2. playlist=YOUR_VIDEO_ID (Required by YouTube for infinite looping)
+        -->
+        <iframe 
+          id="ytPlayer"
+          src="https://www.youtube-nocookie.com/embed/d9MyW72ELq0?autoplay=1&mute=1&loop=1&playlist=d9MyW72ELq0&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1&enablejsapi=1" 
+          title="Trailer Video Banner" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <!-- 2. Dark Vignette & Gradient Overlay (Ensures text contrast) -->
+    <div class="banner-overlay"></div>
+
+    <!-- 3. Foreground Banner Content -->
+    <div class="banner-content">
+      <div class="banner-container">
+        
+        <!-- Metadata Badges -->
+        <div class="meta-badges">
+          <span class="badge badge-accent">Official Trailer</span>
+          <span class="badge badge-glass">4K Ultra HD</span>
+          <span class="rating">★ 8.9 / 10</span>
+        </div>
+
+        <!-- Main Title -->
+        <h1 class="banner-title">AVATAR: THE WAY OF WATER</h1>
+
+        <!-- Synopsis / Tagline -->
+        <p class="banner-synopsis">
+          Set more than a decade after the events of the first film, experience the breathtaking story of the Sully family and the battle for Pandora.
+        </p>
+
+        <!-- Genre Tags -->
+        <div class="genre-tags">
+          <span>Sci-Fi</span>
+          <span class="dot">•</span>
+          <span>Action</span>
+          <span class="dot">•</span>
+          <span>Adventure</span>
+          <span class="dot">•</span>
+          <span>3h 12m</span>
+        </div>
+
+        <!-- Call-To-Action Buttons -->
+        <div class="banner-actions">
+          <a href="#watch" class="btn btn-primary">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            Watch Now
+          </a>
+          <a href="#info" class="btn btn-secondary">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            More Details
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 4. Floating Audio & Controls -->
+    <div class="banner-controls">
+      <button class="control-btn" id="audioToggleBtn" title="Toggle Sound">
+        <span id="soundLabel">🔇 Sound Off</span>
+      </button>
+      <div class="age-badge">13+</div>
+    </div>
+
+  </section>
+
+  <!-- Audio Toggle Script (Communicates with YouTube IFrame API) -->
+  <script>
+    const iframe = document.getElementById('ytPlayer');
+    const audioBtn = document.getElementById('audioToggleBtn');
+    const soundLabel = document.getElementById('soundLabel');
+    let isMuted = true;
+
+    audioBtn.addEventListener('click', () => {
+      isMuted = !isMuted;
+      const command = isMuted ? 'mute' : 'unMute';
+      iframe.contentWindow.postMessage(
+        JSON.stringify({ event: 'command', func: command, args: [] }),
+        '*'
+      );
+      soundLabel.textContent = isMuted ? '🔇 Sound Off' : '🔊 Sound On';
+      audioBtn.classList.toggle('active', !isMuted);
+    });
+  </script>
+</body>
+</html>
