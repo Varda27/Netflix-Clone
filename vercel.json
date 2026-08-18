@@ -1,9 +1,16 @@
-﻿{
-  "cleanUrls": true,
-  "rewrites": [
+{
+  "cleanUrls": false,
+  "redirects": [
     {
       "source": "/",
-      "destination": "/html/index.html"
+      "destination": "/html/index.html",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(login|signup|home|main|mainprofile|mylist|notification|play|profile|search|video)",
+      "destination": "/html/$1.html"
     }
   ]
 }
