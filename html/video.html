@@ -3,14 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YouTube Trailer Video Banner</title>
+  <title>Netflix - Watch Trailer</title>
   <!-- Google Fonts for Cinematic Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../CSS/video.css">
 </head>
 <body>
+
+  <!-- Back button -->
+  <a href="home.html" class="back-btn">← Back to Home</a>
 
   <!-- ==============================================
        CINEMATIC YOUTUBE TRAILER HERO BANNER
@@ -20,12 +23,6 @@
     <!-- 1. Background Video Layer (16:9 Full Bleed Autoplay Loop) -->
     <div class="video-background-container">
       <div class="video-scaler">
-        <!-- 
-          HOW TO REPLACE WITH YOUR YOUTUBE VIDEO:
-          Replace 'd9MyW72ELq0' in BOTH:
-          1. embed/YOUR_VIDEO_ID
-          2. playlist=YOUR_VIDEO_ID (Required by YouTube for infinite looping)
-        -->
         <iframe 
           id="ytPlayer"
           src="https://www.youtube-nocookie.com/embed/d9MyW72ELq0?autoplay=1&mute=1&loop=1&playlist=d9MyW72ELq0&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1&enablejsapi=1" 
@@ -37,7 +34,7 @@
       </div>
     </div>
 
-    <!-- 2. Dark Vignette & Gradient Overlay (Ensures text contrast) -->
+    <!-- 2. Dark Vignette & Gradient Overlay -->
     <div class="banner-overlay"></div>
 
     <!-- 3. Foreground Banner Content -->
@@ -72,19 +69,19 @@
 
         <!-- Call-To-Action Buttons -->
         <div class="banner-actions">
-          <a href="#watch" class="btn btn-primary">
+          <a href="play.html" class="btn btn-primary">
             <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
               <path d="M8 5v14l11-7z"/>
             </svg>
-            Watch Now
+            Watch Movie
           </a>
-          <a href="#info" class="btn btn-secondary">
+          <a href="home.html" class="btn btn-secondary">
             <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="12" cy="12" r="10"></circle>
               <line x1="12" y1="16" x2="12" y2="12"></line>
               <line x1="12" y1="8" x2="12.01" y2="8"></line>
             </svg>
-            More Details
+            Explore More
           </a>
         </div>
 
@@ -101,7 +98,7 @@
 
   </section>
 
-  <!-- Audio Toggle Script (Communicates with YouTube IFrame API) -->
+  <!-- Audio Toggle Script -->
   <script>
     const iframe = document.getElementById('ytPlayer');
     const audioBtn = document.getElementById('audioToggleBtn');

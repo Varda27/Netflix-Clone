@@ -1,0 +1,15 @@
+# OS & IDE files
+.DS_Store
+Thumbs.db
+*.tmp
+*asw-*
+.vscode/
+.idea/
+
+# Vercel
+.vercel/
+
+# Dependencies & Build
+node_modules/
+dist/
+build/

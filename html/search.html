@@ -6,100 +6,143 @@
     <title>Netflix - Search</title>
 
     <link rel="stylesheet" href="../CSS/search.css">
-
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
 
 <!-- Navbar -->
-
 <nav>
-
     <div class="logo">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg">
+        <a href="home.html">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix">
+        </a>
     </div>
 
     <ul>
         <li><a href="home.html">Home</a></li>
-        <li><a href="#">TV Shows</a></li>
-        <li><a href="#">Movies</a></li>
-        <li><a href="#">My List</a></li>
+        <li><a href="home.html">TV Shows</a></li>
+        <li><a href="home.html">Movies</a></li>
+        <li><a href="mylist.html">My List</a></li>
     </ul>
-
 </nav>
 
 <!-- Search Section -->
-
 <section class="search-container">
-
-    <h1>Search Movies & TV Shows</h1>
-
+    <h1>Search Movies &amp; TV Shows</h1>
     <div class="search-box">
-
-        <input type="text" placeholder="Search...">
-
-        <button>
+        <input type="text" id="searchInput" placeholder="Search by title, genre, actor...">
+        <button id="searchButton" aria-label="Search">
             <i class="fa-solid fa-search"></i>
         </button>
-
     </div>
-
 </section>
 
 <!-- Search Results -->
-
 <section class="results">
+    <h2 id="resultsHeading">Popular Searches</h2>
 
-    <h2>Popular Searches</h2>
-
-    <div class="movie-grid">
-
-        <div class="movie-card">
-            <img src="../Images/dark.jpg">
+    <div class="movie-grid" id="movieGrid">
+        <div class="movie-card" data-title="Dark">
+            <img src="../Images/dark.jpg" alt="Dark">
             <p>Dark</p>
         </div>
 
-        <div class="movie-card">
-            <img src="../Images/barbie.jpg">
+        <div class="movie-card" data-title="Barbie">
+            <img src="../Images/barbie.jpg" alt="Barbie">
             <p>Barbie</p>
         </div>
 
-        <div class="movie-card">
-            <img src="../Images/money.jpg">
+        <div class="movie-card" data-title="Money Heist">
+            <img src="../Images/money.jpg" alt="Money Heist">
             <p>Money Heist</p>
         </div>
 
-        <div class="movie-card">
-            <img src="../Images/squid.jpg">
+        <div class="movie-card" data-title="Squid Game">
+            <img src="../Images/squid.jpg" alt="Squid Game">
             <p>Squid Game</p>
         </div>
 
-        <div class="movie-card">
-            <img src="../Images/wonderfool.jpg">
+        <div class="movie-card" data-title="Wonderfool">
+            <img src="../Images/wonderfool.jpg" alt="Wonderfool">
             <p>Wonderfool</p>
         </div>
 
-        <div class="movie-card">
-            <img src="../Images/Lucifer.jpg">
+        <div class="movie-card" data-title="Lucifer">
+            <img src="../Images/Lucifer.jpg" alt="Lucifer">
             <p>Lucifer</p>
         </div>
 
-        <div class="movie-card">
-            <img src="../Images/witch.jpg">
+        <div class="movie-card" data-title="The Witch">
+            <img src="../Images/witch.jpg" alt="The Witch">
             <p>The Witch</p>
         </div>
 
-        <div class="movie-card">
-            <img src="../Images/extraction.jpg">
+        <div class="movie-card" data-title="Extraction">
+            <img src="../Images/extraction.jpg" alt="Extraction">
             <p>Extraction</p>
         </div>
 
-    </div>
+        <div class="movie-card" data-title="Wednesday">
+            <img src="../Images/wed.jpg" alt="Wednesday">
+            <p>Wednesday</p>
+        </div>
 
+        <div class="movie-card" data-title="Stranger Things">
+            <img src="../Images/stranger.jpg" alt="Stranger Things">
+            <p>Stranger Things</p>
+        </div>
+
+        <div class="movie-card" data-title="Spider-Man No Way Home">
+            <img src="../Images/nowayhome.jpg" alt="Spider-Man No Way Home">
+            <p>Spider-Man No Way Home</p>
+        </div>
+
+        <div class="movie-card" data-title="Dhamaal">
+            <img src="../Images/Dhamaal.jpg" alt="Dhamaal">
+            <p>Dhamaal</p>
+        </div>
+    </div>
 </section>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const searchInput = document.getElementById("searchInput");
+        const cards = document.querySelectorAll(".movie-card");
+        const heading = document.getElementById("resultsHeading");
+
+        function filterMovies() {
+            const query = searchInput.value.toLowerCase().trim();
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const title = card.getAttribute("data-title").toLowerCase();
+                if (title.includes(query)) {
+                    card.style.display = "block";
+                    visibleCount++;
+                } else {
+                    card.style.display = "none";
+                }
+            });
+
+            if (query === "") {
+                heading.textContent = "Popular Searches";
+            } else {
+                heading.textContent = `Search Results (${visibleCount})`;
+            }
+        }
+
+        if (searchInput) {
+            searchInput.addEventListener("input", filterMovies);
+        }
+
+        // Make movie cards clickable
+        cards.forEach(card => {
+            card.addEventListener("click", () => {
+                window.location.href = "play.html";
+            });
+        });
+    });
+</script>
 </body>
 </html>

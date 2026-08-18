@@ -680,5 +680,3 @@ document.addEventListener(
 
     }
 );
-
-saveProfiles(profiles);

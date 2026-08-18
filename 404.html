@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix - Lost Your Way?</title>
+
+    <meta property="og:title" content="Netflix Clone">
+    <meta property="og:description" content="Unlimited movies, TV shows and more. Starts at ₹149.">
+    <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png">
+
+    <link rel="icon" type="image/x-icon" href="https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2016.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #000;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        header {
+            padding: 25px 50px;
+        }
+
+        .logo img {
+            width: 140px;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            color: #e5e5e5;
+            max-width: 650px;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .btn-home {
+            background-color: #e50914;
+            color: #fff;
+            padding: 14px 36px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.2s, transform 0.2s;
+            display: inline-block;
+        }
+
+        .btn-home:hover {
+            background-color: #b20710;
+            transform: scale(1.05);
+        }
+
+        .error-code {
+            margin-top: 40px;
+            font-size: 16px;
+            color: #8c8c8c;
+            border-left: 2px solid #e50914;
+            padding-left: 12px;
+        }
+
+        footer {
+            padding: 30px 50px;
+            text-align: center;
+            color: #737373;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 20px;
+            }
+            .logo img {
+                width: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix Logo">
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <h1>Lost your way?</h1>
+        <p>Sorry, we can't find that page. You'll find lots to explore on the home page.</p>
+        <a id="homeLink" href="index.html" class="btn-home">Netflix Home</a>
+        <div class="error-code">Error Code <strong>NSES-404</strong></div>
+    </main>
+
+    <footer>
+        <p>Netflix Clone © 2026</p>
+    </footer>
+
+    <script>
+        // Intelligent base-aware redirect to repository home
+        (function() {
+            // Find base repository path (e.g. "/Netflix-Clone/")
+            const pathSegments = window.location.pathname.split('/').filter(Boolean);
+            let targetHome = "index.html";
+
+            if (pathSegments.length > 0) {
+                // If on GitHub Pages (e.g. /Netflix-Clone/anything)
+                const repoName = pathSegments[0];
+                targetHome = "/" + repoName + "/index.html";
+            }
+
+            const homeBtn = document.getElementById("homeLink");
+            if (homeBtn) {
+                homeBtn.href = targetHome;
+            }
+        })();
+    </script>
+</body>
+</html>
